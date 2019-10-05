@@ -1,0 +1,157 @@
+<head>
+<title>Olimpic skydive</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (Mailing SF.psd) -->
+<table id="Tabela_01" width="480" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; background-image:url('https://res.cloudinary.com/rubygarage-bookstore/image/upload/v1566896289/bg_d3dyza.png'); padding:0 100px; margin-bottom: 50px; font-family: 'Poppins', sans-serif; color:#454545; letter-spacing: 0.5px;">
+	<thead>
+		<tr>
+			<td colspan="2" style="text-align: center; width: 480px; min-width: 480px;">
+				<img src="https://res.cloudinary.com/rubygarage-bookstore/image/upload/v1566896521/olimpic_xddol0.png" width="280" height="100" style="object-fit: contain;" ></td>
+		</tr>
+	</thead>
+	<tbody style="background-color:#fff; box-shadow:0 0 20px rgba(0,0,0,0.1); display: block; margin-top:20px; border:solid 1px #dfdfdf;">
+		<tr>
+			<td colspan="2">
+				<p style="padding-top:50px; padding-bottom: 0; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:25px; font-weight: bold;">Witaj <%= @user.name %>!</p>
+				<p style="padding-top:20px; padding-bottom: 35px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: normal; color:#444848; line-height: 30px;">Dziękujemy za dokonanie odprawy przed skokiem w tandemie.
+          <br>
+					<p style="padding-bottom: 10px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: bold; color:#444848">Za wybór tej lokalizacji otrzymujesz: </p>
+					<ul style="padding-bottom:10px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 30px; color:#444848">
+						<li><%= @order.extra.split(':').last %></li>
+					</ul>
+          <br>
+					<p style="padding-bottom: 10px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: bold; color:#444848">Lokalizacja: </p>
+					<ul style="padding-bottom:10px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 30px; color:#444848">
+						<li><%= @place %></li>
+					</ul>
+					<p style="padding-bottom: 10px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: bold; color:#444848">Data: </p>
+					<ul style="padding-bottom:10px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 30px; color:#444848">
+						<li><%= @time %></li>
+					</ul>
+					<p style="padding-bottom: 10px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: bold; color:#444848">Godzina skoku: </p>
+					<ul style="padding-bottom:10px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 30px; color:#444848">
+						<li> zostanie przekazana przez naszego pracownika telefonicznie, na 1 dzień przed skokiem po potwierdzeniu warunków atmosferycznych dla wybranej lokalizacji skoku.</li>
+					</ul>
+					<p style="padding-bottom: 10px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: bold; color:#444848">nr. zamówienia </p>
+					<ul style="padding-bottom:10px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 30px; color:#444848">
+						<li> <%= @order.external_id %></li>
+					</ul>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<p style="padding-bottom: 10px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: bold; color:#444848">Imię i nazwisko pasażera:</p>
+				<ul style="padding-bottom:10px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 30px; color:#444848">
+					<li> <%= @order.flyers.first.name %></li>
+          <li>Tel. Kontaktowy <%= @order.billing.phone %></li>
+				</ul>
+				<p style="padding-bottom: 10px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: bold; color:#444848">Imię i nazwisko osoba, która zamówiła usługa:</p>
+				<ul style="padding-bottom:10px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 30px; color:#444848">
+					<li> <%= @user.name %></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" width="600">
+				<p style="text-align:center;"><span style="border-top:solid 1px #dfdfdf; width:390px; display: inline-block;"></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<p style="padding-top:25px; padding-bottom: 0px; margin:0; text-align:center; font-size:18px; font-weight: normal; color:#444848;">Kod vouchera:</p>
+				<p style="padding-top:10px; padding-bottom:20px; margin:0; text-align:center; font-size:18px; font-weight: bold; "><a style="color:#e42221; text-decoration: none;" href=""><%= @order.vouchers[0].code %></a></p>
+				<p style="padding-top:0px; padding-bottom: 25px; margin:0; text-align:center; font-size:18px; font-weight: normal; color:#444848;">ważny do <%= (@order.created_at + 1.year).to_date %></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" width="600">
+				<p style="text-align:center;"><span style="border-top:solid 1px #dfdfdf; width:390px; display: inline-block;"></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+        <% if @order.extra != 'false' %>
+				<p style="padding-bottom: 10px; padding-top: 35px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: bold; color:#444848">Dodatki:</p>
+				<ul style="padding-bottom:35px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 30px; color:#444848">
+					<li>- <%= @order.extra.split(':').last %></li>
+				</ul>
+        <% end %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<p style="padding-bottom: 10px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:15px; font-weight: bold; color:#444848">
+					<ul style="padding-bottom:20px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 20px; color:#444848">
+	          <strong>Ubezpieczenie ARC-T</strong>
+	          <li style="margin-bottom: 20px;"><span style="padding-top:20px; padding-bottom: 30px; padding-left:0px; padding-right:45px; margin:0; text-align: right; font-size:12px; font-weight: normal; line-height: 18px; color:#444848;">Jeśli nie wykupiłeś ubezpieczenia zachęcamy do jego wykupienia.
+	          Ubezpieczenie ARC-T to ubezpieczenie terminu skoku, pozwala na jednokrotną zmianę zarezerwowanego terminu skoku po ustaleniu terminu rezerwacji na stronie głównej w zakładce: „check-in”. Użytkownik posiadający ubezpieczenie ARC-T nie ponosi opłat za jednokrotną zmianę wybranego terminu rezerwacji po ustaleniu terminu na stronie głównej w zakładce: check-in ewentualnym odwołaniu przez siebie skoku w dniu realizacji usługi oraz nie traci prawa do wykorzystania zakupionego vouchera na skok w tandemie lub lot widokowy.( warunki szczegółówe ubezpieczenia ARC-T znajdują się regulaminie sklepu.)</span></li>
+	          <br>
+	          <strong>Ubezpieczenie kosztów podróży Travel Costs TC</strong>
+	          <li style="margin-bottom: 20px;"><span style="padding-top:20px; padding-bottom: 30px; padding-left:0px; padding-right:45px; margin:0; text-align: right; font-size:12px; font-weight: normal; line-height: 18px; color:#444848;">Jeśli nie wykupiłeś ubezpieczenia Travel Costs TC zachęcamy do jego wykupienia.
+	          Ubezpiecz koszty podróży na wypadek odwołania skoku lub lotu widokowego, po przyjeździe na lotnisko realizacji usługi. Niesprzyjające warunki atmosferyczne, awaria samolotu, zakaz wykonywania lotów w przestrzeni nad lotniskiem i inne nieprzewdziane okoliczności niezależne i zależne od organizatora. Z tych powodów realizacja usługi może być przeniesiona na inny termin bez dodatkowych opłat, bez konieczności posiadania ubezpieczenia terminu realizacji usługi. W przypadkach w/w po opłaceniu ubezpieczenia otrzymasz zwrot kosztów dojazdu na lotnisko realizacji usługi wg stawki 0,84 zł na 1 km.</span></li>
+	          <br>
+	          <strong>Ubezpieczenie NNW</strong>
+	          <li style="margin-bottom: 20px;"><span style="padding-top:20px; padding-bottom: 30px; padding-left:0px; padding-right:45px; margin:0; text-align: right; font-size:12px; font-weight: normal; line-height: 18px; color:#444848;"> Jeśli nie wykupiłeś ubezpieczenia  NNW dla pasażera Tandemu zachęcamy do jego wykupienia
+	          ubezpieczenie NNW na sumę ubezpieczenia 80 000 zł szczegółowe warunki ubezpieczenia NNW znajdują się w warunkach ubezpieczenia NNW skoku w tandemie na stronach informacyjnych serwisu olimpic-skydive.pl</span></li>
+	          <br>
+          </p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<p style="padding-bottom: 30px; padding-right: 45px; padding-left:45px; margin:0; text-align:left; font-size:25px; font-weight: bold; color:#444848">Ważne informacje przed skokiem:</p>
+				<ul style="padding-bottom:20px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 20px; color:#444848">
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">1. Maksymalny ciężar pasażera tandemu nie może przekroczyć 110 kg</span></li>
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">2. Cena skoku w tandemie z instruktorem obejmuje pasażera do wagi 90 kg.</span></li>
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">3. W przypadku wagi pasażera tandemu przekraczającej 90 kg zamawiający/ pasażer tandemu jest zobowiązany do dokonania w dniu skoku opłaty w wysokości 10 zł za każdy dodatkowy kilogram masy ciała powyżej 90 kg.</span></li>
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">4. Opłata musi zostać wniesiona przed wykonaniem skoku , maksymalna dopłata za wagę nie może przekroczyć 200 zł.</span></li>
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">5. Pasażer tandemu powinien być ubrany w wygodne spodnie oraz t-shirt. W chłodniejsze dni należy zaopatrzyć się w ciepłą bluzę lub sweter.</span></li>
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">6. Pasażer tandemu musi posiadać podczas skoku pełne buty sportowe bez odkrytych palców.</span></li>
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">7. Pasażer tandemu musi pojawić się w miejscu realizacji usługi 30 minut przed planowaną godziną skoku.</span></li>
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">8. Pasażer tandemu przed skokiem musi podpisać umowę dotyczącą realizacji usługi skoku w tandemie z instruktorem i przejść szkolenie przed skokiem.</span></li>
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">9. Pasażerowie tandemu poniżej 18 roku życia muszą na strefę przyjechać z rodzicem lub opiekunem prawnym.</span></li>
+					<li style="margin-bottom: 20px;"><span style="display: inline-block; width: 350px; padding-left: 22px;">10. Z każdym zamawiającym/pasażerem tandemu organizator kontaktuje się na dzień przed zarezerwowanym skokiem w celu potwierdzenia warunków pogodowych.</span></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+
+				<ul style="padding-bottom:30px; padding-right: 40px; margin: 0; list-style-position: inside; list-style-type: none; padding-left: 45px; text-align:left; font-size:15px; font-weight: normal; line-height: 20px; letter-spacing: 0.38px; color:#444848">
+					<li><strong>Uwaga!</strong>
+          <p>Możesz dokonywać zmian w swojej odprawie przed skokiem w tandemie do 3 dni przed wybraną/wyznaczoną datą skoku.</p>
+          <p>Po upływie tego terminu dokonanie zmian zostanie wyłączone przez system CHECK-IN.</p>
+          <p>W przypadku pytań prosimy o kontakt pod numer telefonu: 788-118-753 , do kontaktu telefonicznego przygotuj numer Twojego zamówienia.</p>
+          <p>Życzymy niezapomnianych wrażeń i wspaniałej zabawy 🙂</p>
+          </li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" width="600">
+				<p style="text-align:center;"><span style="border-top:solid 1px #dfdfdf; width:390px; display: inline-block;"></span></p>
+			</td>
+		</tr>
+
+
+		<!-- footer -->
+		<tr>
+			<td>
+				<p style="padding-top:20px; padding-left:45px; padding-bottom: 30px; margin:0; text-align:left; font-size:12px; font-weight: normal; line-height: 18px; color:#444848;">ul. Lotnicza 8,<br> 55-045 Sobótka, Mirosławice</p>
+			</td>
+			<td>
+				<p style="padding-top:20px; padding-bottom: 30px; padding-left:0px; padding-right:45px; margin:0; text-align: right; font-size:12px; font-weight: normal; line-height: 18px; color:#444848;"><img src="https://res.cloudinary.com/rubygarage-bookstore/image/upload/v1566896826/i-08_woswjj.png" style="display: inline-block; width: 12px; height: 12px; object-fit: contain; margin-right: 8px;">+48 788-118-753<br> <img src="https://res.cloudinary.com/rubygarage-bookstore/image/upload/v1566896849/i-09_tanwtg.png" style="display: inline-block; width: 12px; height: 9px; object-fit: contain; margin-right: 14px;">info@olimpic-skydive.pl</p>
+			</td>
+		</tr>
+	</tbody>
+	<tfoot style="background-image:url('https://res.cloudinary.com/rubygarage-bookstore/image/upload/v1566896919/bg-2_ilpcpm.png'); background-position: 0 -10px; height: 150px; background-repeat: no-repeat; margin-bottom: 100px;">
+		<tr>
+			<td style="text-align: center; height: 150px;" colspan="2">
+			</td>
+		</tr>
+	</tfoot>
+</table>
+<!-- End Save for Web Slices -->
+</body>
