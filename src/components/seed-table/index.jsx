@@ -1,29 +1,30 @@
 import React from 'react'
 
-
 export default function SeedTable(props) {
   return (
     <table className='table'>
       <thead>
         <tr onClick={(evt) => props.sortBy(evt.target.textContent.toLowerCase())}>
-          <th>Name</th>
-          <th>Address</th>
-          <th>City</th>
-          <th>Region</th>
-          <th>Country</th>
-          <th>Birthday</th>
+        {
+          Object.keys(props.data[0]).map( (el, index) => (
+            <th key={index}>
+              {el.charAt(0).toUpperCase()+ el.slice(1)}
+            </th>
+          ))
+        }
         </tr>
       </thead>
       <tbody>
       {
-        props.data.map(row => (
-          <tr className={row.name} key={props.data.indexOf(row)}>
-            <td>{row.name}</td>
-            <td>{row.address}</td>
-            <td>{row.city}</td>
-            <td>{row.region}</td>
-            <td>{row.country}</td>
-            <td>{row.birthday}</td>
+        props.data.map((row, index) => (
+          <tr className={row.name} key={index}>
+          {
+            Object.values(row).map( (el, index) => (
+              <td key={index}>
+                {el}
+              </td>
+            ))
+          }
           </tr>
         ))
       }
